@@ -1,16 +1,11 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "app.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "app.py"
-      }
-    ]
-  }
-  
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python",
+      "config": { "includeFiles": ["app.py", "home.html", "regmodel.pkl", "scaling.pkl"] }
+    }
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "app.py" }]
+}
+
